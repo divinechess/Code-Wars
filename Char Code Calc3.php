@@ -1,6 +1,6 @@
 <?php
 $string = "ABC";
-calc($string);
+calc($string);  //github test
 
 
 function calc($s) {
