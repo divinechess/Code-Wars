@@ -5,7 +5,7 @@
 // protected
 
 class PERSON {
-    protected $firstname;
+    public $firstname;
     public $lastname;
     public $gender;
     public function __construct($firstname,$lastname,$gender = 'f' ) {
@@ -27,20 +27,20 @@ class EMPLOYEE extends PERSON {
     private $jobTitle;
 
         public function __construct($jobTitle,$firstname,$lastname,$gender = 'f'){
-         $this->setJobTitle($jobTitle);
+         $this->jobTitle = $jobTitle;
 
          parent::__construct($firstname,$lastname,$gender); //edits values on parent class
 
         }
 
-
-        public function setJobTitle ($jobTitle){
-        $this->jobTitle = ucfirst($jobTitle);
+        public function __set($name, $value){
+         $this->$name = $value;
 
         }
 
-        public function getJobTitle(){
-        return $this->jobTitle;
+        public function __get($name){
+         return $this->$name;
+
         }
 
         public function sayhello (){
@@ -71,8 +71,9 @@ class EMPLOYEE extends PERSON {
 $jane = new EMPLOYEE('front End','jane','wigglesworth','f');
 // echo $jane->firstname;
 //$jane->setJobTitle('back End');
-echo $jane->firstname;
-// echo "<br />";
+$jane->jobTitle = 'Dev/Test';
+echo $jane->jobTitle;
+// echo "<br />";s
 // echo $jane->getJobTitle();
 // echo "<br />";
 // echo $jane->getgender();
