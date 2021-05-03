@@ -5,22 +5,32 @@ buddy(10,50);
 function buddy($start, $limit) {
     // $n = $start;
     // $m = $limit;
-    for($i = $start; $i <= $limit; $i++){
-        for($j = $start + 1; $j <= ($limit * 2); $j++ ){
-            $n = divisors($start);
-            $m = divisors($limit);
+    for($i = 47; $i <= 48; $i++){
+        for($j = 74; $j <= 75; $j++ ){
+            $n = divisors($i);
+            $m = divisors($j);
+
+            echo "Number of n is " . $i;
             $n = array_sum($n);
+            echo "<br />";
+            echo "The Sum of n is " . $n;
+            echo "<br />";
+            echo "<br />";
+            echo "The number of m is " . $j;
+            echo "<br />";
             $m = array_sum($m);
-            if ($n == $limit + 1 && $m == $start + 1 && $m > $n) {
+            echo "The sum of m is " . $m;
+            echo "<br />";
+            echo "<br />";
+
+            if ($n == $j + 1 && $m == $i + 1 ) {
                 echo "We have a buddy!";
                 echo "<br />";
                 echo "n == to: $n";
                 echo "<br />";
                 echo "m == to: $m";
                 echo "<br />";
-                echo "Start == to : $start";
-                echo "<br />";
-                echo "Limit == to : $limit";
+
             }
         }
     }
@@ -34,8 +44,10 @@ function buddy($start, $limit) {
     echo "<br />";
 
 
-echo "Nothing";
-return "Nothing";
+
+
+
+
 
 }
 
