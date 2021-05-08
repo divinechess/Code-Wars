@@ -1,28 +1,21 @@
 <?php
-// buddy(48,50);
-//  buddy (1071625,1103735);
+//buddy(48,50);
+// buddy (1071625,1103735);
 buddy(57345, 90061);
 //buddy(1081184,1331967);
 //buddy(6379, 8275);
 
 function buddy($start, $limit) {
-       $n = [];
-       $m = [];
+      // $n = [];
+     //  $m = [];
     $startTime = microtime(true);
     for($i = $start; $i <= $limit ; $i++) {
 
 
-        $n = array_sum(divisors($i)) -1;
-        //print_r($n);
-        //echo "<br />";
-        
-       //print_r($n);
-       //echo "<br />";
-        //echo "<br />";
-        $m = array_sum(divisors($n)) -1;
-        //print_r($s);
-        //print_r($m);
-        //echo "<br />";
+        $n = divisors($i) -1;
+
+        $m = divisors($n) -1;
+
         if($m == $i ){   //&& $s - 1 > $i
             echo "We have a buddy!";
             echo "<br />";
@@ -36,17 +29,18 @@ function buddy($start, $limit) {
         //return "$n";
     }
     echo "Nothing";
+    echo "Elapsed time is: ". (microtime(true) - $startTime) ." seconds";
 
 }
 
 function divisors($x) {
-    $divisors_arr = array ();
+    $z = 0;
     for($i = 1; $i < $x; $i ++) {
         if ($x % $i == 0) {
-            $divisors_arr [] = $i;
+            $z += $i;
         }
     }
-    return $divisors_arr;
+    return $z;
 }
 
 

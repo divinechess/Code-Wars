@@ -1,19 +1,21 @@
 <?php
 buddy(48,50);
- // buddy (1071625,1103735);
-// buddy(57345, 90061);
+//  buddy (1071625,1103735);
+//buddy(57345, 90061);
 //buddy(1081184,1331967);
+//buddy(6379, 8275);
+
 function buddy($start, $limit) {
        $n = [];
        $m = [];
 
     for($i = $start; $i <= $limit ; $i++) {
 
-        $n = divisors($i);
-        $n = array_sum($n);
+
+        $n = array_sum(divisors($i)) -1;
         //print_r($n);
         //echo "<br />";
-        $n = $n -1;
+
        //print_r($n);
        //echo "<br />";
         //echo "<br />";
@@ -26,18 +28,15 @@ function buddy($start, $limit) {
         if($m == $i ){   //&& $s - 1 > $i
             echo "We have a buddy!";
             echo "<br />";
-            echo "$m $n";
+            echo "$m $n"; //inverse
 
         }
 
+
+
         //return "$n";
     }
-
-
-
-
-
-
+    echo "Nothing";
 
 }
 
