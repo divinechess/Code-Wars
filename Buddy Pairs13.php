@@ -6,9 +6,8 @@ buddy (1071625,1103735);
 //buddy(6379, 8275);
 
 function buddy($start, $limit) {
-      // $n = [];
-     //  $m = [];
-    $startTime = microtime(true);
+
+
     for($i = $start; $i <= $limit ; $i++) {
 
 
@@ -17,19 +16,16 @@ function buddy($start, $limit) {
         $m = divisors($n) -1;
 
         if($m == $i && $n > $m ){   //&& $s - 1 > $i
-            echo "We have a buddy!";
-            echo "<br />";
-            echo "$m $n"; //inverse
-            echo "Elapsed time is: ". (microtime(true) - $startTime) ." seconds";
+
             return "$m $n";
         }
 
 
 
-        //return "$n";
+
     }
-    echo "Nothing";
-    echo "Elapsed time is: ". (microtime(true) - $startTime) ." seconds";
+    return "Nothing";
+
 
 }
 
