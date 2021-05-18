@@ -25,8 +25,6 @@ function buddy($start, $limit) {
 
     }
     return "Nothing";
-
-
 }
 
 function divisors($n) {
